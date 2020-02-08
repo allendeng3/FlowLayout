@@ -11,12 +11,17 @@ import UIKit
 class PhotoCell: UICollectionViewCell {
 
     @IBOutlet weak var photoImgView: UIImageView!
+    
+    var photoModel: MiniGalleryModel? {
+        didSet {
+//            print(photoModel?.imageUrl)
+            guard let imageUrl = photoModel?.imageUrl else { return }
+            self.photoImgView.imageFromURL(imageUrl, placeholder: UIImage(named: "default")!)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-    
-    func setPhotoCell(_ imageUrl: String) {
-        photoImgView.imageFromURL(imageUrl, placeholder: UIImage(named: "default")!)
     }
 }

@@ -14,7 +14,8 @@ class NetworkRequest: UIViewController {
         let instance = NetworkRequest()        
         return instance
     }()
-    func dataRequest(completion: @escaping (JSON, Error?) -> ()) {
+    
+    func dataRequest(completion: @escaping (Any) -> ()) {
         let session = URLSession.shared
         let url = URL(string: "https://private-04a55-videoplayer1.apiary-mock.com/pictures")!
 
@@ -29,7 +30,7 @@ class NetworkRequest: UIViewController {
 
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: [])
-                completion(JSON(json), nil)
+                completion(json as AnyObject)
             } catch {
                 print("JSON error: \(error.localizedDescription)")
             }
