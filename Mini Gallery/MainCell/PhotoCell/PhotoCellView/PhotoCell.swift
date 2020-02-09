@@ -14,9 +14,8 @@ class PhotoCell: UICollectionViewCell {
     
     var photoModel: MiniGalleryModel? {
         didSet {
-//            print(photoModel?.imageUrl)
             guard let imageUrl = photoModel?.imageUrl else { return }
-            self.photoImgView.imageFromURL(imageUrl, placeholder: UIImage(named: "default")!)
+            self.photoImgView.imageFromURL(imageUrl, placeholder: UIImage(named: "default")!, shouldCacheImage: true, closure: nil)
         }
     }
     

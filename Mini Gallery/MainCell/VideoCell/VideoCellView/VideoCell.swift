@@ -11,23 +11,28 @@ import AVKit
 
 class VideoCell: UICollectionViewCell {
 
-    @IBOutlet weak var playerView: UIView!
+    @IBOutlet weak var playerView: UIView! 
     
+    private var player = AVPlayer()
+    private var playerLayer = AVPlayerLayer()
+        
     var videoModel: MiniGalleryModel? {
-            didSet {
-                guard let videoUrl = videoModel?.videoUrl else { return }
-                let videoAsset = AVAsset(url: URL(string: videoUrl)!)
-                let videoPlayerItem = AVPlayerItem(asset: videoAsset)
-                let player = AVPlayer(playerItem: videoPlayerItem)
-                let playerLayer = AVPlayerLayer(player: player)
-                playerLayer.frame = self.bounds
-                playerLayer.videoGravity = .resize
-                self.layer.addSublayer(playerLayer)
-                player.play()
-
-            }
+        didSet {
+            guard let videoUrl = videoModel?.videoUrl else { return }
+            let videoAsset = AVAsset(url: URL(string: videoUrl)!)
+            let videoPlayerItem = AVPlayerItem(asset: videoAsset)
+            player = AVPlayer(playerItem: videoPlayerItem)
+            playerLayer = AVPlayerLayer(player: player)
+            playerLayer.frame = self.bounds
+            playerLayer.videoGravity = .resize
+            playerView.layer.addSublayer(playerLayer)
+            player.play()
         }
-
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

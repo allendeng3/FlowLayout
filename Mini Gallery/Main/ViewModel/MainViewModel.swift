@@ -16,8 +16,8 @@ enum CollectionViewType: String {
 
 class MainViewModel:NSObject {
     
-    var photoCollectionView: UICollectionView!
-    var videoCollectionView: UICollectionView!
+    lazy var photoCollectionView = UICollectionView()
+    lazy var videoCollectionView = UICollectionView()
 
     fileprivate lazy var photoVM = CellViewModel()
     fileprivate let photoIdentifier = "PhotoCell"
@@ -90,7 +90,7 @@ extension MainViewModel: UICollectionViewDataSource, UICollectionViewDelegate {
         }
         return UICollectionViewCell()
     }
-    
+            
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if scrollView == videoCollectionView {
             let offset = videoCollectionView.contentOffset.x

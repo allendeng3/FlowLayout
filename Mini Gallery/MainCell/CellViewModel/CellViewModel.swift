@@ -14,6 +14,7 @@ class CellViewModel: NSObject {
     
     func fetchGalleryData(completion: @escaping() -> ()) {
         NetworkRequest.shared.dataRequest { (result) in
+            self.miniGalleryModel.removeAll()
             guard let resultDict = result as? [[String: NSObject]] else { return }
             for dict in resultDict {
                 self.miniGalleryModel.append(MiniGalleryModel(dict))
