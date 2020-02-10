@@ -15,18 +15,41 @@ class VideoCell: UICollectionViewCell {
     
     private var player = AVPlayer()
     private var playerLayer = AVPlayerLayer()
-        
-    var videoModel: MiniGalleryModel? {
+            
+    var videoModel: MiniGalleryModel! {
         didSet {
-            guard let videoUrl = videoModel?.videoUrl else { return }
-            let videoAsset = AVAsset(url: URL(string: videoUrl)!)
-            let videoPlayerItem = AVPlayerItem(asset: videoAsset)
-            player = AVPlayer(playerItem: videoPlayerItem)
-            playerLayer = AVPlayerLayer(player: player)
-            playerLayer.frame = self.bounds
-            playerLayer.videoGravity = .resize
-            playerView.layer.addSublayer(playerLayer)
-            player.play()
+//            // 增加VideoUrl不为空
+//            guard let videoUrl = videoModel?.videoUrl, !videoUrl.isEmpty else { return }
+//            let videoAsset = AVAsset(url: URL(string: videoUrl)!)
+//            let videoPlayerItem = AVPlayerItem(asset: videoAsset)
+//            player = AVPlayer(playerItem: videoPlayerItem)
+//            playerLayer = AVPlayerLayer(player: player)
+//            playerLayer.frame = self.bounds
+//            playerLayer.videoGravity = .resize
+//            playerView.layer.addSublayer(playerLayer)
+//            player.play()
+            
+            // if let 
+            if let videoUrl = videoModel?.videoUrl {
+                let videoAsset = AVAsset(url: URL(string: videoUrl)!)
+                let videoPlayerItem = AVPlayerItem(asset: videoAsset)
+                player = AVPlayer(playerItem: videoPlayerItem)
+                playerLayer = AVPlayerLayer(player: player)
+                playerLayer.frame = self.bounds
+                playerLayer.videoGravity = .resize
+                playerView.layer.addSublayer(playerLayer)
+                player.play()
+            }
+            
+//            // 设置default value
+//            let videoAsset = AVAsset(url: URL(string: optionStr(videoModel?.videoUrl))!)
+//            let videoPlayerItem = AVPlayerItem(asset: videoAsset)
+//            player = AVPlayer(playerItem: videoPlayerItem)
+//            playerLayer = AVPlayerLayer(player: player)
+//            playerLayer.frame = self.bounds
+//            playerLayer.videoGravity = .resize
+//            playerView.layer.addSublayer(playerLayer)
+//            player.play()
         }
     }
     

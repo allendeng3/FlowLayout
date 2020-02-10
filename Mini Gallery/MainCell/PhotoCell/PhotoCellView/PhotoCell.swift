@@ -14,8 +14,24 @@ class PhotoCell: UICollectionViewCell {
     
     var photoModel: MiniGalleryModel? {
         didSet {
-            guard let imageUrl = photoModel?.imageUrl else { return }
-            self.photoImgView.imageFromURL(imageUrl, placeholder: UIImage(named: "default")!, shouldCacheImage: true, closure: nil)
+//            // 增加imageUrl不为空
+//            guard let imageUrl = photoModel?.imageUrl, !imageUrl.isEmpty else { return }
+//            self.photoImgView.imageFromURL(imageUrl,
+//                                           placeholder: UIImage(named: "default")!,
+//                                           shouldCacheImage: true,
+//                                           closure: nil)
+            // if let
+            if let imageUrl = photoModel?.imageUrl {
+                self.photoImgView.imageFromURL(imageUrl,
+                                               placeholder: UIImage(named: "default")!,
+                                               shouldCacheImage: true,
+                                               closure: nil)
+            }
+//            // 设置default value
+//            self.photoImgView.imageFromURL(optionStr(photoModel?.imageUrl),
+//            placeholder: UIImage(named: "default")!,
+//            shouldCacheImage: true,
+//            closure: nil)
         }
     }
     

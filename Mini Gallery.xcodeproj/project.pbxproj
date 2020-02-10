@@ -11,7 +11,6 @@
 		9F54C79423EEBEA900E16CB3 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F54C78C23EEBEA800E16CB3 /* VideoCell.xib */; };
 		9F54C79523EEBEA900E16CB3 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54C78F23EEBEA800E16CB3 /* PhotoCell.swift */; };
 		9F54C79623EEBEA900E16CB3 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F54C79023EEBEA800E16CB3 /* PhotoCell.xib */; };
-		9F54C79723EEBEA900E16CB3 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54C79223EEBEA800E16CB3 /* CellViewModel.swift */; };
 		9FA20C2923EEA83C00FF2534 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA20C2823EEA83C00FF2534 /* MainViewModel.swift */; };
 		9FACACD023EA8B4900A2AB33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FACACCF23EA8B4900A2AB33 /* AppDelegate.swift */; };
 		9FACACD223EA8B4900A2AB33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FACACD123EA8B4900A2AB33 /* SceneDelegate.swift */; };
@@ -49,7 +48,6 @@
 		9F54C78C23EEBEA800E16CB3 /* VideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
 		9F54C78F23EEBEA800E16CB3 /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		9F54C79023EEBEA800E16CB3 /* PhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
-		9F54C79223EEBEA800E16CB3 /* CellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
 		9FA20C2823EEA83C00FF2534 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		9FACACCC23EA8B4900A2AB33 /* Mini Gallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini Gallery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FACACCF23EA8B4900A2AB33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 		9F54C78823EEB58500E16CB3 /* MainCell */ = {
 			isa = PBXGroup;
 			children = (
-				9F54C79123EEBEA800E16CB3 /* CellViewModel */,
 				9F54C78D23EEBEA800E16CB3 /* PhotoCell */,
 				9F54C78923EEBEA800E16CB3 /* VideoCell */,
 			);
@@ -138,14 +135,6 @@
 				9F54C79023EEBEA800E16CB3 /* PhotoCell.xib */,
 			);
 			path = PhotoCellView;
-			sourceTree = "<group>";
-		};
-		9F54C79123EEBEA800E16CB3 /* CellViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				9F54C79223EEBEA800E16CB3 /* CellViewModel.swift */,
-			);
-			path = CellViewModel;
 			sourceTree = "<group>";
 		};
 		9FA20C2723EEA81A00FF2534 /* ViewModel */ = {
@@ -421,7 +410,6 @@
 			files = (
 				9FC6CD0E23EE7EF600DAEA5A /* MainViewController.swift in Sources */,
 				9FACAD2223EADCCC00A2AB33 /* MiniGalleryFlowLayout.swift in Sources */,
-				9F54C79723EEBEA900E16CB3 /* CellViewModel.swift in Sources */,
 				9F54C79323EEBEA900E16CB3 /* VideoCell.swift in Sources */,
 				9FACACD023EA8B4900A2AB33 /* AppDelegate.swift in Sources */,
 				9FC6CD0723EE7E9300DAEA5A /* NetworkRequest.swift in Sources */,
